@@ -29,7 +29,7 @@ It is possible to build a local Docker image which has all the necessary depende
 
 Steps:
 
-1. Build the image: `docker build -t transfer-reference-client .`
+1. Build the image: `docker build --build-arg GIT_COMMIT=$( git log -1 --format=%H ) --tag transfer-reference-client .`
 1. Run the following command line to upload a file:
 
        docker run --rm -it --name transfer-reference-client \
